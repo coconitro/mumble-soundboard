@@ -24,10 +24,14 @@ function updateSoundList() {
       $('#sounds')
       .append($('<div>', {
         'class': 'col-md-4'
-      }).append($('<button>', {
+      })
+      .append($('<div>', {
+        'style': 'padding-bottom: 1em'
+      })
+      .append($('<button>', {
         type: 'button',
         'class': 'btn btn-primary btn-lg btn-block playSound'
-      }).text(sounds[i])));
+      }).text(sounds[i]))));
     }
     $('.playSound').click(playSound);
     setTimeout(updateSoundList, soundPollTime);
@@ -40,13 +44,15 @@ function playSound() {
 
 function handleUpload(e) {
   e.preventDefault();
+  $('form div.progress').show();
+  $('form div.progress-bar').css('width', '0%');  
   var form = new FormData($(this)[0]);
   $.ajax({
     url: $(this).attr('action'),
     type: $(this).attr('method'),
     enctype: 'multipart/form-data',
     success: function (res) {
-      console.log(res);
+      $('form div.progress').hide();
     },
      xhr: function() {
       var xhr = $.ajaxSettings.xhr();
@@ -63,7 +69,5 @@ function handleUpload(e) {
 }
 
 function progressHandler(e) {
-  if(e.lengthComputable){
-    console.log({value:e.loaded,max:e.total});
-  }
+  $('form div.progress-bar').css('width', ((e.loaded/e.total) * 100)+'%');
 }
