@@ -25,12 +25,13 @@ npm start
 ```
 docker run \
   -d \
+  --restart always \
   -p 8080:3000 \
   -v "/var/lib/docker/data/soundboard/:/audio" \
   -e MUMBLE_URL="mumble://yourhost.mumble.example/ChannelName" \
   -e MUMBLE_NAME="SoundboardBot" \
   -e MUMBLE_PASS="password" \
   -e AUDIO_DIR="/audio/" \
-  mycatisblack/mumble-soundboard:latest /bin/bash
+  mycatisblack/mumble-soundboard:latest
 ```
 
