@@ -2,6 +2,12 @@
 
 A simple soundboard bot and web client for mumble. A bot will idle in a specified channel on your mumble server which takes /slash commands and a web UI will be served up to also control the soundboard.
 
+## Dependancies
+
+If you are running outside of the docker container you will need:
+
+ * node & npm
+
 ## Usage
 
 ### Config
