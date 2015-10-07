@@ -1,0 +1,13 @@
+<form id="upload" action="/api/sounds" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="soundname">Sound name</label>
+    <input type="text" class="form-control" id="soundname" name="soundname" placeholder="noise">
+    <p class="help-block">No spaces or special chars.</p>
+  </div>
+  <div class="form-group">
+    <label for="soundfile">File input</label>
+    <input type="file" id="soundfile" name="soundfile">
+    <p class="help-block">Upload mp3 files here.</p>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
