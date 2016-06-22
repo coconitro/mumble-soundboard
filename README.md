@@ -17,7 +17,10 @@ The following env variables need to be set.
  * MUMBLE_NAME
  * MUMBLE_PASS
  * MUMBLE_URL
- * AUDIO_DIR
+
+The following env variables can be overridden
+
+ * AUDIO_DIR - defaults to `/audio`
 
 ### Node
 
